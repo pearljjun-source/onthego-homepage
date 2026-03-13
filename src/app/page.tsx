@@ -106,12 +106,14 @@ export default function Home() {
           <p className="text-[15px] text-[#7A7A72] mb-10">
             아이디어만 가져오세요. 나머지는 저희가 함께합니다.
           </p>
-          <Link
-            href="/works#contact"
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=hello@onthegostudio.kr&su=%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EB%AC%B8%EC%9D%98"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block px-8 py-3.5 rounded-full bg-[#1A1A1A] text-[#F5F5F0] text-[13px] hover:bg-[#2D2D2D] transition-colors"
           >
             문의하기
-          </Link>
+          </a>
         </div>
       </section>
     </>

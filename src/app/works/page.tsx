@@ -169,7 +169,9 @@ export default function WorksPage() {
               </div>
 
               <a
-                href={`mailto:${company.email}`}
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=hello@onthegostudio.kr&su=%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EB%AC%B8%EC%9D%98"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 w-fit px-8 py-3.5 rounded-full bg-[#1A1A1A] text-[#F5F5F0] text-[13px] hover:bg-[#2D2D2D] transition-colors"
               >
                 이메일 보내기
