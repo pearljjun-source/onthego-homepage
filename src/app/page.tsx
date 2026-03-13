@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getSlogan, getServices, getPortfolio, getCompany } from "@/data/site";
+import { getSlogan, getServices, getPortfolio, getCompany, getGmailUrl } from "@/data/site";
 import { images } from "@/data/theme";
 import RotatingSlogan from "@/components/RotatingSlogan";
 import Marquee from "@/components/Marquee";
@@ -9,6 +9,7 @@ export default function Home() {
   const services = getServices();
   const portfolio = getPortfolio();
   const company = getCompany();
+  const gmailUrl = getGmailUrl();
 
   return (
     <>
@@ -48,22 +49,17 @@ export default function Home() {
             What We Do
           </span>
           <div className="space-y-0 border-t border-[#DDDDD6]">
-            {[
-              { keyword: "AI Development", desc: "AI 기반 앱 & 웹 솔루션" },
-              { keyword: "Web & Mobile", desc: "홈페이지 · 앱 기획부터 런칭까지" },
-              { keyword: "Creative Contents", desc: "AI 크리에이티브 콘텐츠 제작" },
-              { keyword: "Digital Marketing", desc: "SEO · 네이버 광고 · 콘텐츠 마케팅" },
-            ].map((item) => (
+            {services.map((item) => (
               <Link
-                key={item.keyword}
+                key={item.id}
                 href="/works"
                 className="group flex items-center justify-between py-6 md:py-8 border-b border-[#DDDDD6]"
               >
                 <h3 className="text-[clamp(1.4rem,3vw,2.5rem)] font-light text-[#1A1A1A] group-hover:text-[#5E6AD2] transition-colors">
-                  {item.keyword}
+                  {item.titleEn}
                 </h3>
                 <span className="text-[13px] text-[#7A7A72] hidden md:block">
-                  {item.desc}
+                  {item.description}
                 </span>
               </Link>
             ))}
@@ -107,7 +103,7 @@ export default function Home() {
             아이디어만 가져오세요. 나머지는 저희가 함께합니다.
           </p>
           <a
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=hello@onthegostudio.kr&su=%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EB%AC%B8%EC%9D%98"
+            href="{gmailUrl}"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-8 py-3.5 rounded-full bg-[#1A1A1A] text-[#F5F5F0] text-[13px] hover:bg-[#2D2D2D] transition-colors"

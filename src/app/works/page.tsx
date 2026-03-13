@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { getServices, getPortfolio, getCompany } from "@/data/site";
+import Image from "next/image";
+import { getServices, getPortfolio, getCompany, getGmailUrl } from "@/data/site";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ export default function WorksPage() {
   const services = getServices();
   const portfolio = getPortfolio();
   const company = getCompany();
+  const gmailUrl = getGmailUrl();
 
   return (
     <>
@@ -92,20 +94,32 @@ export default function WorksPage() {
             {portfolio.map((item, i) => (
               <div
                 key={item.id}
-                className="group grid grid-cols-1 md:grid-cols-12 gap-6 bg-[#2D2D2D] rounded-2xl p-8 md:p-12 hover:bg-[#353535] transition-colors duration-300 items-center"
+                className="group bg-[#2D2D2D] rounded-2xl overflow-hidden hover:bg-[#353535] transition-colors duration-300"
               >
-                <div className="md:col-span-1">
-                  <span className="text-[12px] text-[#7A7A72]">0{i + 1}</span>
-                </div>
-                <div className="md:col-span-5">
-                  <h3 className="text-3xl md:text-4xl font-light text-[#F5F5F0] group-hover:text-[#8A8FF8] transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="text-[14px] text-[#7A7A72] mt-2">
-                    {item.description}
-                  </p>
-                </div>
-                <div className="md:col-span-4">
+                {item.image && (
+                  <div className="relative h-[240px] md:h-[320px] overflow-hidden">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className={`object-cover group-hover:scale-105 transition-transform duration-500 ${
+                        item.id === "speaky-app" ? "object-[center_17%]" : "object-top"
+                      }`}
+                    />
+                  </div>
+                )}
+                <div className="p-8 md:p-12 flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
+                  <div className="md:w-8">
+                    <span className="text-[12px] text-[#7A7A72]">0{i + 1}</span>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl md:text-3xl font-light text-[#F5F5F0] group-hover:text-[#8A8FF8] transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-[14px] text-[#7A7A72] mt-2">
+                      {item.description}
+                    </p>
+                  </div>
                   <div className="flex flex-wrap gap-2">
                     {item.tags.map((tag) => (
                       <span
@@ -116,11 +130,11 @@ export default function WorksPage() {
                       </span>
                     ))}
                   </div>
-                </div>
-                <div className="md:col-span-2 text-right">
-                  <span className="text-[12px] text-[#7A7A72]">
-                    {statusLabel[item.status]}
-                  </span>
+                  <div className="md:w-20 md:text-right">
+                    <span className="text-[12px] text-[#7A7A72]">
+                      {statusLabel[item.status]}
+                    </span>
+                  </div>
                 </div>
               </div>
             ))}
@@ -154,7 +168,7 @@ export default function WorksPage() {
                     Email
                   </span>
                   <a
-                    href="https://mail.google.com/mail/?view=cm&fs=1&to=hello@onthegostudio.kr&su=%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EB%AC%B8%EC%9D%98"
+                    href="{gmailUrl}"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-lg text-[#1A1A1A] hover:text-[#5E6AD2] transition-colors"
@@ -171,7 +185,7 @@ export default function WorksPage() {
               </div>
 
               <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=hello@onthegostudio.kr&su=%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EB%AC%B8%EC%9D%98"
+                href="{gmailUrl}"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 w-fit px-8 py-3.5 rounded-full bg-[#1A1A1A] text-[#F5F5F0] text-[13px] hover:bg-[#2D2D2D] transition-colors"
