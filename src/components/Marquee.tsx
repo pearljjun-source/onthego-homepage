@@ -13,6 +13,7 @@ function MarqueeCard({ item }: { item: PortfolioItem }) {
             src={item.image}
             alt={item.title}
             fill
+            sizes="320px"
             className={`object-cover group-hover:scale-105 transition-transform duration-500 ${
               item.id === "speaky-app" ? "object-[center_17%]" : "object-top"
             }`}
@@ -47,6 +48,7 @@ export default function Marquee({ items }: { items: PortfolioItem[] }) {
           style={{
             animation: "marquee-left 30s linear infinite",
             animationPlayState: paused ? "paused" : "running",
+            willChange: "transform",
           }}
         >
           {[...row1, ...row1, ...row1].map((item, i) => (
@@ -61,6 +63,7 @@ export default function Marquee({ items }: { items: PortfolioItem[] }) {
           style={{
             animation: "marquee-right 30s linear infinite",
             animationPlayState: paused ? "paused" : "running",
+            willChange: "transform",
           }}
         >
           {[...row2, ...row2, ...row2].map((item, i) => (

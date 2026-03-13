@@ -10,14 +10,18 @@ export default function RotatingSlogan() {
   const [fade, setFade] = useState(true);
 
   useEffect(() => {
+    let timeoutId: ReturnType<typeof setTimeout>;
     const interval = setInterval(() => {
       setFade(false);
-      setTimeout(() => {
+      timeoutId = setTimeout(() => {
         setIndex((prev) => (prev + 1) % words1.length);
         setFade(true);
       }, 600);
     }, 2800);
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   return (

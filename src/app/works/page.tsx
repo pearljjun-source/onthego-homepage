@@ -90,50 +90,46 @@ export default function WorksPage() {
             포트폴리오
           </h2>
 
-          <div className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {portfolio.map((item, i) => (
               <div
                 key={item.id}
                 className="group bg-[#2D2D2D] rounded-2xl overflow-hidden hover:bg-[#353535] transition-colors duration-300"
               >
                 {item.image && (
-                  <div className="relative h-[240px] md:h-[320px] overflow-hidden">
+                  <div className="relative aspect-[16/10] overflow-hidden">
                     <Image
                       src={item.image}
                       alt={item.title}
                       fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
                       className={`object-cover group-hover:scale-105 transition-transform duration-500 ${
                         item.id === "speaky-app" ? "object-[center_17%]" : "object-top"
                       }`}
                     />
                   </div>
                 )}
-                <div className="p-8 md:p-12 flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
-                  <div className="md:w-8">
-                    <span className="text-[12px] text-[#7A7A72]">0{i + 1}</span>
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl md:text-3xl font-light text-[#F5F5F0] group-hover:text-[#8A8FF8] transition-colors">
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-3">
+                    <h3 className="text-lg font-medium text-[#F5F5F0] group-hover:text-[#8A8FF8] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-[14px] text-[#7A7A72] mt-2">
-                      {item.description}
-                    </p>
+                    <span className="text-[11px] text-[#7A7A72]">
+                      {statusLabel[item.status]}
+                    </span>
                   </div>
-                  <div className="flex flex-wrap gap-2">
+                  <p className="text-[13px] text-[#7A7A72] mb-4">
+                    {item.description}
+                  </p>
+                  <div className="flex flex-wrap gap-1.5">
                     {item.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="text-[11px] px-3 py-1 rounded-full border border-[#444] text-[#B0B0A8]"
+                        className="text-[10px] px-2.5 py-0.5 rounded-full border border-[#444] text-[#B0B0A8]"
                       >
                         {tag}
                       </span>
                     ))}
-                  </div>
-                  <div className="md:w-20 md:text-right">
-                    <span className="text-[12px] text-[#7A7A72]">
-                      {statusLabel[item.status]}
-                    </span>
                   </div>
                 </div>
               </div>
