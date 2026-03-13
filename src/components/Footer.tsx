@@ -44,7 +44,9 @@ export default function Footer() {
               <li>사업자등록번호 {company.businessNumber}</li>
               <li>
                 <a
-                  href={`mailto:${company.email}`}
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=hello@onthegostudio.kr&su=%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EB%AC%B8%EC%9D%98"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-white transition-colors"
                 >
                   {company.email}
