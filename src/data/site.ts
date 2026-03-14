@@ -197,7 +197,7 @@ export const getCeo = () => siteData.ceo;
 export const getGmailUrl = () => {
   const email = siteData.company.email;
   const subject = encodeURIComponent("프로젝트 문의");
-  return `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}`;
+  return `mailto:${email}?subject=${subject}`;
 };
 
 export const getServiceById = (id: string) =>
