@@ -25,10 +25,7 @@ export default function RotatingSlogan() {
   }, []);
 
   return (
-    <p
-      style={{ fontFamily: "var(--font-playfair), serif" }}
-      className="text-[clamp(1.65rem,3.3vw,2.4rem)] font-bold tracking-[0.1em] uppercase text-[#1A1A1A] mb-20 whitespace-nowrap"
-    >
+    <p className="text-[clamp(1.65rem,3.3vw,2.4rem)] font-bold tracking-[0.1em] uppercase text-[#1A1A1A] mb-20 whitespace-nowrap">
       Your{" "}
       <span
         className={`inline-block min-w-[5em] text-center text-[#5E6AD2] transition-all duration-500 ${
