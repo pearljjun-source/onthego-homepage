@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <>
       {/* ── Hero — 한국어 슬로건 중앙 배치, 에디토리얼 타이포 ── */}
-      <section className="min-h-[100svh] flex flex-col items-center px-6 sm:px-8 md:px-12 relative pt-[30vh] md:pt-[35vh]">
+      <section className="min-h-[100svh] flex flex-col items-center px-6 sm:px-8 md:px-12 relative pt-[20vh] md:pt-[20vh]">
         {/* 상단 영문 슬로건 — 단어 순환 */}
         <RotatingSlogan />
 
