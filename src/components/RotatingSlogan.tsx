@@ -26,7 +26,7 @@ export default function RotatingSlogan() {
 
   return (
     <p className="text-[clamp(1.65rem,3.3vw,2.4rem)] font-light tracking-[0.1em] uppercase text-[#1A1A1A] mb-20 whitespace-nowrap">
-      Your{" "}
+      <span className="font-bold">Your</span>{" "}
       <span
         className={`inline-block min-w-[5em] text-center text-[#5E6AD2] transition-all duration-500 ${
           fade ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2"
@@ -34,7 +34,7 @@ export default function RotatingSlogan() {
       >
         {words1[index]}
       </span>
-      , our{" "}
+      <span className="font-bold">, our</span>{" "}
       <span
         className={`inline-block min-w-[5em] text-center text-[#5E6AD2] transition-all duration-500 ${
           fade ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
@@ -42,7 +42,7 @@ export default function RotatingSlogan() {
       >
         {words2[index]}
       </span>
-      .
+      <span className="font-bold">.</span>
     </p>
   );
 }
