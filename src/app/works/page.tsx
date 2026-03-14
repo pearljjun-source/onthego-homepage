@@ -153,6 +153,7 @@ export default function WorksPage() {
               </h2>
               <p className="text-[15px] text-[#7A7A72] leading-relaxed max-w-md">
                 프로젝트에 대해 이야기 나누고 싶으시다면 편하게 연락주세요.
+                <br />
                 빠른 시일 내에 답변드리겠습니다.
               </p>
             </div>
