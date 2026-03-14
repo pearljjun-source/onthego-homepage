@@ -99,7 +99,7 @@ const siteData: SiteData = {
       status: "live",
       image: "/images/works-gdayenglish.jpg",
       mockup: "phone",
-      url: "https://tutoring-app-smoky.vercel.app/",
+      url: "https://tutoring-app-smoky.vercel.app/parent/dashboard",
     },
     {
       id: "chanonlja",
