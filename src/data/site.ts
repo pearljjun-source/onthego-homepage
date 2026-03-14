@@ -76,6 +76,7 @@ const siteData: SiteData = {
       status: "live",
       image: "/images/works-speaky.png",
       mockup: "laptop",
+      url: "https://speaky.co.kr",
     },
     {
       id: "speaky-app",
@@ -98,6 +99,7 @@ const siteData: SiteData = {
       status: "live",
       image: "/images/works-gdayenglish.jpg",
       mockup: "phone",
+      url: "https://tutoring-app-smoky.vercel.app/",
     },
     {
       id: "chanonlja",
@@ -109,6 +111,7 @@ const siteData: SiteData = {
       status: "completed",
       image: "/images/works-chanolja.png",
       mockup: "laptop",
+      url: "https://차놀자.net",
     },
     {
       id: "youtube",
@@ -120,6 +123,7 @@ const siteData: SiteData = {
       status: "live",
       image: "/images/works-youtube.png",
       mockup: "laptop",
+      url: "https://studio.youtube.com/channel/UCjBtbct7aCsJ4fo0S4g5bRQ",
     },
     {
       id: "naverad",
@@ -131,6 +135,7 @@ const siteData: SiteData = {
       status: "live",
       image: "/images/works-naverad.png",
       mockup: "laptop",
+      url: "https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EB%A0%8C%ED%8A%B8%EC%B9%B4+%EC%B0%BD%EC%97%85&ackey=mm4lsm11",
     },
     {
       id: "naverblog",
@@ -142,6 +147,7 @@ const siteData: SiteData = {
       status: "completed",
       image: "/images/works-naverblog.png",
       mockup: "laptop",
+      url: "https://blog.naver.com/chanolja_official_",
     },
     {
       id: "onthegostudio",
@@ -153,6 +159,7 @@ const siteData: SiteData = {
       status: "live",
       image: "/images/works-onthegostudio.png",
       mockup: "laptop",
+      url: "https://onthegostudio.kr",
     },
   ],
 

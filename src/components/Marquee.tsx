@@ -5,8 +5,12 @@ import { useState } from "react";
 import type { PortfolioItem } from "@/data/types";
 
 function MarqueeCard({ item }: { item: PortfolioItem }) {
+  const Wrapper = item.url ? "a" : "div";
+  const linkProps = item.url
+    ? { href: item.url, target: "_blank" as const, rel: "noopener noreferrer" }
+    : {};
   return (
-    <div className="flex-shrink-0 w-[260px] sm:w-[300px] md:w-[320px] rounded-xl overflow-hidden group">
+    <Wrapper {...linkProps} className={`flex-shrink-0 w-[260px] sm:w-[300px] md:w-[320px] rounded-xl overflow-hidden group block ${item.url ? "cursor-pointer" : ""}`}>
       <div className="relative h-[180px] sm:h-[200px] md:h-[220px] overflow-hidden">
         {item.image && (
           <Image
@@ -27,7 +31,7 @@ function MarqueeCard({ item }: { item: PortfolioItem }) {
         </h3>
         <p className="text-[12px] text-[#7A7A72]">{item.description}</p>
       </div>
-    </div>
+    </Wrapper>
   );
 }
 
