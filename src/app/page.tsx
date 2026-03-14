@@ -20,7 +20,7 @@ export default function Home() {
 
         {/* 메인 한국어 슬로건 */}
         <h1 className="text-center leading-[1.15] tracking-tight text-[#1A1A1A]">
-          <span className="block text-[clamp(1.2rem,2.5vw,1.6rem)] font-light text-[#7A7A72] mb-4">
+          <span className="block text-[clamp(1.8rem,3.75vw,2.4rem)] font-light text-[#7A7A72] mb-4">
             기획부터 완성까지,
           </span>
           <span className="block text-[clamp(2.4rem,5.5vw,5rem)] font-light">
