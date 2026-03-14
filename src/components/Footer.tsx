@@ -9,9 +9,9 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#1A1A1A] text-[#F5F5F0]">
-      <div className="max-w-[1400px] mx-auto px-8 md:px-12 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-          <div className="md:col-span-2">
+      <div className="max-w-[1400px] mx-auto px-6 sm:px-8 md:px-12 py-12 sm:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div className="sm:col-span-2 lg:col-span-2">
             <h3 className="text-2xl font-light mb-4">{company.name}</h3>
             <p className="text-[#7A7A72] text-sm leading-relaxed max-w-sm">
               {company.identity}
@@ -27,7 +27,7 @@ export default function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-[#B0B0A8] hover:text-white text-sm transition-colors"
+                    className="text-[#B0B0A8] hover:text-white active:text-white text-sm transition-colors inline-block min-h-[44px] flex items-center"
                   >
                     {item.label}
                   </Link>

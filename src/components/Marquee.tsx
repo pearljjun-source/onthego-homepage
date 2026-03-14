@@ -6,14 +6,15 @@ import type { PortfolioItem } from "@/data/types";
 
 function MarqueeCard({ item }: { item: PortfolioItem }) {
   return (
-    <div className="flex-shrink-0 w-[320px] rounded-xl overflow-hidden group">
-      <div className="relative h-[220px] overflow-hidden">
+    <div className="flex-shrink-0 w-[260px] sm:w-[300px] md:w-[320px] rounded-xl overflow-hidden group">
+      <div className="relative h-[180px] sm:h-[200px] md:h-[220px] overflow-hidden">
         {item.image && (
           <Image
             src={item.image}
             alt={item.title}
             fill
-            sizes="320px"
+            sizes="(max-width: 640px) 260px, (max-width: 768px) 300px, 320px"
+            loading="lazy"
             className={`object-cover group-hover:scale-105 transition-transform duration-500 ${
               item.id === "speaky-app" ? "object-[center_17%]" : "object-top"
             }`}

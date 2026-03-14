@@ -32,7 +32,7 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className={`text-[13px] tracking-wide transition-colors duration-200 ${
+              className={`text-[13px] tracking-wide transition-colors duration-200 min-h-[44px] flex items-center ${
                 pathname === item.href
                   ? "text-[#1A1A1A]"
                   : "text-[#7A7A72] hover:text-[#1A1A1A]"
@@ -45,7 +45,7 @@ export default function Header() {
             href={gmailUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[13px] px-5 py-2 rounded-full bg-[#1A1A1A] text-[#F5F5F0] hover:bg-[#2D2D2D] transition-colors duration-200"
+            className="text-[13px] px-5 py-2 rounded-full bg-[#1A1A1A] text-[#F5F5F0] hover:bg-[#2D2D2D] active:bg-[#3D3D3D] transition-colors duration-200 min-h-[44px] flex items-center"
           >
             문의하기
           </a>
@@ -53,7 +53,7 @@ export default function Header() {
 
         {/* Mobile */}
         <button
-          className="md:hidden text-[#1A1A1A]"
+          className="md:hidden text-[#1A1A1A] min-w-[44px] min-h-[44px] flex items-center justify-center"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="메뉴"
         >
@@ -68,13 +68,13 @@ export default function Header() {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden bg-[#F5F5F0] border-t border-[#DDDDD6] px-8 pb-6 pt-4 space-y-3">
+        <div className="md:hidden bg-[#F5F5F0] border-t border-[#DDDDD6] px-8 pb-6 pt-4 space-y-1">
           {nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               onClick={() => setMenuOpen(false)}
-              className={`block text-sm ${
+              className={`block text-sm min-h-[44px] flex items-center active:opacity-70 transition-opacity ${
                 pathname === item.href ? "text-[#1A1A1A]" : "text-[#7A7A72]"
               }`}
             >
@@ -86,7 +86,7 @@ export default function Header() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setMenuOpen(false)}
-            className="block text-sm text-[#5E6AD2]"
+            className="block text-sm text-[#5E6AD2] min-h-[44px] flex items-center active:opacity-70 transition-opacity"
           >
             문의하기
           </a>

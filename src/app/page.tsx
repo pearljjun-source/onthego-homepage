@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <>
       {/* ── Hero — 한국어 슬로건 중앙 배치, 에디토리얼 타이포 ── */}
-      <section className="min-h-screen flex flex-col items-center justify-start px-8 md:px-12 relative pt-36 md:pt-48">
+      <section className="min-h-screen flex flex-col items-center justify-start px-6 sm:px-8 md:px-12 relative pt-28 sm:pt-36 md:pt-48">
         {/* 상단 영문 슬로건 — 단어 순환 */}
         <RotatingSlogan />
 
@@ -38,12 +38,12 @@ export default function Home() {
       </section>
 
       {/* ── 구분선 ── */}
-      <div className="max-w-[1400px] mx-auto px-8 md:px-12">
+      <div className="max-w-[1400px] mx-auto px-6 sm:px-8 md:px-12">
         <div className="border-t border-[#DDDDD6]" />
       </div>
 
       {/* ── What We Do — 키워드 중심 요약 ── */}
-      <section className="py-24 md:py-32 px-8 md:px-12">
+      <section className="py-16 sm:py-24 md:py-32 px-6 sm:px-8 md:px-12">
         <div className="max-w-[1400px] mx-auto">
           <span className="text-[11px] tracking-[0.2em] uppercase text-[#7A7A72] mb-12 block">
             What We Do
@@ -53,7 +53,7 @@ export default function Home() {
               <Link
                 key={item.id}
                 href="/works"
-                className="group flex items-center justify-between py-6 md:py-8 border-b border-[#DDDDD6]"
+                className="group flex items-center justify-between py-6 md:py-8 border-b border-[#DDDDD6] min-h-[44px] active:opacity-70 transition-opacity"
               >
                 <h3 className="text-[clamp(1.4rem,3vw,2.5rem)] font-light text-[#1A1A1A] group-hover:text-[#5E6AD2] transition-colors">
                   {item.titleEn}
@@ -68,8 +68,8 @@ export default function Home() {
       </section>
 
       {/* ── Portfolio Preview — 무한 마퀴 갤러리 ── */}
-      <section className="bg-[#1A1A1A] py-24 md:py-32">
-        <div className="max-w-[1400px] mx-auto px-8 md:px-12 flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-12">
+      <section className="bg-[#1A1A1A] py-16 sm:py-24 md:py-32">
+        <div className="max-w-[1400px] mx-auto px-6 sm:px-8 md:px-12 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6 mb-12">
           <div>
             <span className="text-[11px] tracking-[0.2em] uppercase text-[#7A7A72] mb-4 block">
               Selected Works
@@ -80,7 +80,7 @@ export default function Home() {
           </div>
           <Link
             href="/works"
-            className="text-[13px] text-[#7A7A72] hover:text-[#F5F5F0] transition-colors flex items-center gap-2"
+            className="text-[13px] text-[#7A7A72] hover:text-[#F5F5F0] active:text-[#F5F5F0] transition-colors flex items-center gap-2 min-h-[44px]"
           >
             전체 보기
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -92,7 +92,7 @@ export default function Home() {
       </section>
 
       {/* ── CTA — 미니멀, 넉넉한 여백 ── */}
-      <section className="py-32 md:py-40 px-8 md:px-12 text-center">
+      <section className="py-24 sm:py-32 md:py-40 px-6 sm:px-8 md:px-12 text-center">
         <div className="max-w-[600px] mx-auto">
           <h2 className="text-[clamp(1.8rem,4vw,3.5rem)] font-light leading-[1.15] tracking-tight text-[#1A1A1A] mb-6">
             프로젝트를 함께
@@ -106,7 +106,7 @@ export default function Home() {
             href="{gmailUrl}"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-8 py-3.5 rounded-full bg-[#1A1A1A] text-[#F5F5F0] text-[13px] hover:bg-[#2D2D2D] transition-colors"
+            className="inline-block px-8 py-3.5 rounded-full bg-[#1A1A1A] text-[#F5F5F0] text-[13px] hover:bg-[#2D2D2D] active:bg-[#3D3D3D] transition-colors min-h-[44px]"
           >
             문의하기
           </a>
