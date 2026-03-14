@@ -123,7 +123,7 @@ const siteData: SiteData = {
       status: "live",
       image: "/images/works-youtube.png",
       mockup: "laptop",
-      url: "https://studio.youtube.com/channel/UCjBtbct7aCsJ4fo0S4g5bRQ",
+      url: "https://www.youtube.com/@chanolja-official/videos",
     },
     {
       id: "naverad",
