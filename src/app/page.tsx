@@ -31,7 +31,7 @@ export default function Home() {
         </h1>
 
         {/* 스크롤 힌트 */}
-        <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#B0B0A8]">
+        <div className="absolute bottom-16 md:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#B0B0A8]">
           <span className="text-[10px] tracking-[0.15em] uppercase">Scroll</span>
           <div className="w-px h-8 bg-[#DDDDD6]" />
         </div>
