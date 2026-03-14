@@ -25,7 +25,7 @@ export default function Home() {
           </span>
           <span className="block text-[clamp(2.4rem,5.5vw,5rem)] font-light">
             당신의{" "}
-            <span className="italic font-normal text-[#5E6AD2]">아이디어</span>에
+            <span className="italic font-normal text-[#5E6AD2]">아이디어</span>{" "}에
             집중합니다
           </span>
         </h1>
