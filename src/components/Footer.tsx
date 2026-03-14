@@ -45,7 +45,7 @@ export default function Footer() {
               <li>사업자등록번호 {company.businessNumber}</li>
               <li>
                 <a
-                  href="{gmailUrl}"
+                  href={gmailUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white transition-colors"
