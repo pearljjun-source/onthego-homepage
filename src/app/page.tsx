@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getSlogan, getServices, getPortfolio, getCompany, getGmailUrl } from "@/data/site";
 import { images } from "@/data/theme";
 import RotatingSlogan from "@/components/RotatingSlogan";
+import ParticleWaveLoader from "@/components/ParticleWaveLoader";
 
 export default function Home() {
   const slogan = getSlogan();
@@ -13,12 +14,15 @@ export default function Home() {
   return (
     <>
       {/* ── Hero — 한국어 슬로건 중앙 배치, 에디토리얼 타이포 ── */}
-      <section className="min-h-[100svh] flex flex-col items-center px-6 sm:px-8 md:px-12 relative pt-[20vh] md:pt-[20vh]">
+      <section className="min-h-[100svh] flex flex-col items-center px-6 sm:px-8 md:px-12 relative pt-[20vh] md:pt-[20vh] overflow-hidden">
+        {/* 3D 파티클 웨이브 배경 */}
+        <ParticleWaveLoader />
+
         {/* 상단 영문 슬로건 — 단어 순환 */}
         <RotatingSlogan />
 
         {/* 메인 한국어 슬로건 */}
-        <h1 className="text-center leading-[1.15] tracking-tight text-[#1A1A1A]">
+        <h1 className="relative z-10 text-center leading-[1.15] tracking-tight text-[#1A1A1A]">
           <span className="block text-[clamp(1.8rem,3.75vw,2.4rem)] font-light text-[#7A7A72] mb-4">
             기획부터 완성까지,
           </span>
@@ -30,7 +34,7 @@ export default function Home() {
         </h1>
 
         {/* 스크롤 힌트 */}
-        <div className="absolute bottom-28 md:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#B0B0A8]">
+        <div className="absolute bottom-28 md:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#B0B0A8] z-10">
           <span className="text-[10px] tracking-[0.15em] uppercase">Scroll</span>
           <div className="w-px h-8 bg-[#DDDDD6]" />
         </div>
