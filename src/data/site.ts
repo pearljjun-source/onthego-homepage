@@ -139,9 +139,9 @@ const siteData: SiteData = {
     },
     {
       id: "naverblog",
-      title: "차놀자 블로그",
-      titleEn: "Chanonlja Blog",
-      description: "네이버 홈페이지형 블로그 제작",
+      title: "브랜드 블로그 구축",
+      titleEn: "Brand Blog",
+      description: "네이버 홈페이지형 블로그 기획·디자인·콘텐츠 세팅",
       descriptionEn: "Naver homepage-style blog design",
       tags: ["Naver", "Blog", "Branding"],
       status: "completed",
