@@ -180,8 +180,6 @@ export default function WorksPage() {
                   </span>
                   <a
                     href={gmailUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className="text-lg text-[#1A1A1A] hover:text-[#5E6AD2] transition-colors"
                   >
                     {company.email}
@@ -197,8 +195,6 @@ export default function WorksPage() {
 
               <a
                 href={gmailUrl}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 w-fit px-8 py-3.5 rounded-full bg-[#1A1A1A] text-[#F5F5F0] text-[13px] hover:bg-[#2D2D2D] transition-colors"
               >
                 이메일 보내기

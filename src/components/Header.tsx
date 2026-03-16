@@ -43,8 +43,6 @@ export default function Header() {
           ))}
           <a
             href={gmailUrl}
-            target="_blank"
-            rel="noopener noreferrer"
             className="text-[13px] px-5 py-2 rounded-full bg-[#1A1A1A] text-[#F5F5F0] hover:bg-[#2D2D2D] active:bg-[#3D3D3D] transition-colors duration-200 min-h-[44px] flex items-center"
           >
             문의하기
@@ -83,8 +81,6 @@ export default function Header() {
           ))}
           <a
             href={gmailUrl}
-            target="_blank"
-            rel="noopener noreferrer"
             onClick={() => setMenuOpen(false)}
             className="block text-sm text-[#5E6AD2] min-h-[44px] flex items-center active:opacity-70 transition-opacity"
           >

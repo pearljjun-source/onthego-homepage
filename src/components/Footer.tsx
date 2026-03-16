@@ -46,8 +46,6 @@ export default function Footer() {
               <li>
                 <a
                   href={gmailUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="hover:text-white transition-colors"
                 >
                   {company.email}

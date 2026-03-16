@@ -104,8 +104,6 @@ export default function Home() {
           </p>
           <a
             href={gmailUrl}
-            target="_blank"
-            rel="noopener noreferrer"
             className="inline-block px-8 py-3.5 rounded-full bg-[#1A1A1A] text-[#F5F5F0] text-[13px] hover:bg-[#2D2D2D] active:bg-[#3D3D3D] transition-colors min-h-[44px]"
           >
             문의하기
