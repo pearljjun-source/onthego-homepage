@@ -86,9 +86,9 @@ function Wave() {
     <points ref={meshRef} geometry={geometry} rotation={[-Math.PI / 3.5, 0, 0]} position={[0, -2, 0]}>
       <pointsMaterial
         size={1.8}
-        color="#1A1A1A"
+        color="#5E6AD2"
         transparent
-        opacity={0.5}
+        opacity={0.45}
         sizeAttenuation
         depthWrite={false}
       />
