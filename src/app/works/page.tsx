@@ -103,34 +103,34 @@ export default function WorksPage() {
                 <Wrapper
                   key={item.id}
                   {...linkProps}
-                  className={`group grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-center block ${
+                  className={`grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-center ${
                     item.url ? "cursor-pointer" : ""
                   }`}
                 >
-                  {/* 이미지 */}
-                  <div className={`${isEven ? "md:col-span-7" : "md:col-span-7 md:order-2"} relative aspect-[16/10] rounded-2xl overflow-hidden`}>
+                  {/* 이미지 — 독립 호버 줌 */}
+                  <div className={`${isEven ? "md:col-span-7" : "md:col-span-7 md:order-2"} group/img relative aspect-[16/10] rounded-2xl overflow-hidden`}>
                     {item.image && (
                       <Image
                         src={item.image}
                         alt={item.title}
                         fill
                         sizes="(max-width: 768px) 100vw, 58vw"
-                        className={`object-cover group-hover:scale-105 transition-transform duration-700 ease-out ${
+                        className={`object-cover group-hover/img:scale-105 transition-transform duration-700 ease-out ${
                           item.id === "speaky-app" ? "object-[center_17%]" : "object-top"
                         }`}
                       />
                     )}
                   </div>
 
-                  {/* 설명 */}
-                  <div className={`${isEven ? "md:col-span-5" : "md:col-span-5 md:order-1"} flex flex-col gap-4`}>
+                  {/* 설명 — 독립 호버 색상 */}
+                  <div className={`${isEven ? "md:col-span-5" : "md:col-span-5 md:order-1"} group/text flex flex-col gap-4`}>
                     <span className="text-[10px] tracking-[0.15em] uppercase text-[#8A8FF8]">
                       {statusLabel[item.status]}
                     </span>
-                    <h3 className="text-2xl md:text-3xl font-light text-[#F5F5F0] group-hover:text-[#8A8FF8] transition-colors duration-700 flex items-center gap-2">
+                    <h3 className="text-2xl md:text-3xl font-light text-[#F5F5F0] group-hover/text:text-[#8A8FF8] transition-colors duration-700 flex items-center gap-2">
                       {item.title}
                       {item.url && (
-                        <svg className="w-4 h-4 text-[#7A7A72] group-hover:text-[#8A8FF8] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-4 h-4 text-[#7A7A72] group-hover/text:text-[#8A8FF8] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
                         </svg>
                       )}
