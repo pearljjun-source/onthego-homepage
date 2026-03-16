@@ -2,7 +2,6 @@ import Link from "next/link";
 import { getSlogan, getServices, getPortfolio, getCompany, getGmailUrl } from "@/data/site";
 import { images } from "@/data/theme";
 import RotatingSlogan from "@/components/RotatingSlogan";
-import Marquee from "@/components/Marquee";
 
 export default function Home() {
   const slogan = getSlogan();
@@ -67,28 +66,67 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Portfolio Preview — 무한 마퀴 갤러리 ── */}
-      <section className="bg-[#1A1A1A] py-16 sm:py-24 md:py-32">
-        <div className="max-w-[1400px] mx-auto px-6 sm:px-8 md:px-12 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6 mb-12">
-          <div>
-            <span className="text-[11px] tracking-[0.2em] uppercase text-[#7A7A72] mb-4 block">
-              Selected Works
-            </span>
-            <h2 className="text-[clamp(1.8rem,3.5vw,3rem)] font-light leading-[1.1] text-[#F5F5F0]">
-              포트폴리오
-            </h2>
+      {/* ── Selected Works — 텍스트 갤러리 ── */}
+      <section className="bg-[#1A1A1A] py-16 sm:py-24 md:py-32 px-6 sm:px-8 md:px-12">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6 mb-16">
+            <div>
+              <span className="text-[11px] tracking-[0.2em] uppercase text-[#7A7A72] mb-4 block">
+                Selected Works
+              </span>
+              <h2 className="text-[clamp(1.8rem,3.5vw,3rem)] font-light leading-[1.1] text-[#F5F5F0]">
+                포트폴리오
+              </h2>
+            </div>
+            <Link
+              href="/works"
+              className="text-[13px] text-[#7A7A72] hover:text-[#F5F5F0] active:text-[#F5F5F0] transition-colors flex items-center gap-2 min-h-[44px]"
+            >
+              전체 보기
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
           </div>
-          <Link
-            href="/works"
-            className="text-[13px] text-[#7A7A72] hover:text-[#F5F5F0] active:text-[#F5F5F0] transition-colors flex items-center gap-2 min-h-[44px]"
-          >
-            전체 보기
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </Link>
+
+          <div className="border-t border-[#2D2D2D]">
+            {portfolio.map((item, i) => {
+              const Wrapper = item.url ? "a" : "div";
+              const linkProps = item.url
+                ? { href: item.url, target: "_blank" as const, rel: "noopener noreferrer" }
+                : {};
+              return (
+                <Wrapper
+                  key={item.id}
+                  {...linkProps}
+                  className={`group grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-8 py-6 md:py-7 border-b border-[#2D2D2D] items-baseline ${
+                    item.url ? "cursor-pointer" : ""
+                  }`}
+                >
+                  <span className="md:col-span-1 text-[12px] text-[#5E6AD2] font-medium">
+                    0{i + 1}
+                  </span>
+                  <h3 className="md:col-span-3 text-[clamp(1.1rem,2vw,1.4rem)] font-normal text-[#F5F5F0] group-hover:text-[#8A8FF8] transition-colors">
+                    {item.title}
+                  </h3>
+                  <span className="md:col-span-4 text-[13px] text-[#7A7A72]">
+                    {item.description}
+                  </span>
+                  <div className="md:col-span-4 flex flex-wrap gap-1.5 md:justify-end">
+                    {item.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-[10px] px-2.5 py-0.5 rounded-full border border-[#3D3D3D] text-[#7A7A72]"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </Wrapper>
+              );
+            })}
+          </div>
         </div>
-        <Marquee items={portfolio} />
       </section>
 
       {/* ── CTA — 미니멀, 넉넉한 여백 ── */}
