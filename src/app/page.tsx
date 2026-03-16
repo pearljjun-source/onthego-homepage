@@ -22,13 +22,13 @@ export default function Home() {
         <RotatingSlogan />
 
         {/* 메인 한국어 슬로건 */}
-        <h1 className="relative z-10 text-center leading-[1.15] tracking-tight text-[#1A1A1A]">
-          <span className="block text-[clamp(1.8rem,3.75vw,2.4rem)] font-light text-[#7A7A72] mb-4">
+        <h1 className="relative z-10 text-center leading-[1.15] tracking-tight text-[#0A0A0A]">
+          <span className="block text-[clamp(1.8rem,3.75vw,2.4rem)] font-light text-[#4A4A42] mb-4">
             기획부터 완성까지,
           </span>
           <span className="block text-[clamp(2.4rem,5.5vw,5rem)] font-light">
             당신의{" "}
-            <span className="italic font-normal text-[#5E6AD2]">아이디어</span>{" "}에
+            <span className="italic font-normal text-[#4A50B5]">아이디어</span>{" "}에
             집중합니다
           </span>
         </h1>

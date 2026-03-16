@@ -25,10 +25,10 @@ export default function RotatingSlogan() {
   }, []);
 
   return (
-    <p className="relative z-10 text-[clamp(1rem,4.5vw,2.4rem)] font-normal tracking-[0.1em] uppercase text-[#1A1A1A] mb-20 whitespace-nowrap">
+    <p className="relative z-10 text-[clamp(1rem,4.5vw,2.4rem)] font-normal tracking-[0.1em] uppercase text-[#0A0A0A] mb-20 whitespace-nowrap">
       Your{" "}
       <span
-        className={`inline-block min-w-[5em] text-center text-[#5E6AD2] transition-all duration-500 ${
+        className={`inline-block min-w-[5em] text-center text-[#4A50B5] transition-all duration-500 ${
           fade ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2"
         }`}
       >
@@ -36,7 +36,7 @@ export default function RotatingSlogan() {
       </span>
       , our{" "}
       <span
-        className={`inline-block min-w-[5em] text-center text-[#5E6AD2] transition-all duration-500 ${
+        className={`inline-block min-w-[5em] text-center text-[#4A50B5] transition-all duration-500 ${
           fade ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
         }`}
       >
