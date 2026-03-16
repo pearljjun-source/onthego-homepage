@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <>
       {/* ── Hero — 한국어 슬로건 중앙 배치, 에디토리얼 타이포 ── */}
-      <section className="min-h-[100svh] flex flex-col items-center px-6 sm:px-8 md:px-12 relative pt-[20vh] md:pt-[20vh] overflow-hidden bg-[#0A0A0F]">
+      <section className="min-h-[100svh] flex flex-col items-center px-6 sm:px-8 md:px-12 relative pt-[20vh] md:pt-[20vh] overflow-hidden bg-[#F5F5F0]">
         {/* 3D 파티클 웨이브 배경 */}
         <ParticleWaveLoader />
 
