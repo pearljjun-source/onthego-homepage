@@ -90,55 +90,80 @@ export default function WorksPage() {
             포트폴리오
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* 잡지 스타일 비대칭 레이아웃 */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-6 auto-rows-auto">
             {portfolio.map((item, i) => {
               const Wrapper = item.url ? "a" : "div";
               const linkProps = item.url
                 ? { href: item.url, target: "_blank" as const, rel: "noopener noreferrer" }
                 : {};
+
+              // 비대칭 패턴: 0=wide, 1=narrow, 2=narrow, 3=wide, 4=medium, 5=medium, 6=tall, 7=short ...
+              const patterns = [
+                "md:col-span-7 md:row-span-2",
+                "md:col-span-5",
+                "md:col-span-5",
+                "md:col-span-8",
+                "md:col-span-4 md:row-span-2",
+                "md:col-span-5",
+                "md:col-span-7",
+              ];
+              const aspect = [
+                "aspect-[16/10]",
+                "aspect-[4/3]",
+                "aspect-[4/3]",
+                "aspect-[21/9]",
+                "aspect-[3/4]",
+                "aspect-[16/10]",
+                "aspect-[16/10]",
+              ];
+              const layoutClass = patterns[i % patterns.length];
+              const aspectClass = aspect[i % aspect.length];
+
               return (
                 <Wrapper
                   key={item.id}
                   {...linkProps}
-                  className={`group bg-[#2D2D2D] rounded-2xl overflow-hidden hover:bg-[#353535] transition-colors duration-300 block ${
+                  className={`group relative rounded-2xl overflow-hidden block ${layoutClass} ${
                     item.url ? "cursor-pointer" : ""
                   }`}
                 >
                   {item.image && (
-                    <div className="relative aspect-[16/10] overflow-hidden">
+                    <div className={`relative w-full ${aspectClass} overflow-hidden`}>
                       <Image
                         src={item.image}
                         alt={item.title}
                         fill
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        className={`object-cover group-hover:scale-105 transition-transform duration-500 ${
+                        sizes="(max-width: 768px) 100vw, 60vw"
+                        className={`object-cover group-hover:scale-105 transition-transform duration-700 ease-out ${
                           item.id === "speaky-app" ? "object-[center_17%]" : "object-top"
                         }`}
                       />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                     </div>
                   )}
-                  <div className="p-6">
-                    <div className="flex items-center justify-between mb-3">
-                      <h3 className="text-lg font-medium text-[#F5F5F0] group-hover:text-[#8A8FF8] transition-colors flex items-center gap-2">
-                        {item.title}
-                        {item.url && (
-                          <svg className="w-3.5 h-3.5 text-[#7A7A72] group-hover:text-[#8A8FF8] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-                          </svg>
-                        )}
-                      </h3>
-                      <span className="text-[11px] text-[#7A7A72]">
+                  <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-[10px] tracking-[0.15em] uppercase text-[#8A8FF8]">
                         {statusLabel[item.status]}
                       </span>
                     </div>
-                    <p className="text-[13px] text-[#7A7A72] mb-4">
+                    <h3 className="text-lg md:text-xl font-medium text-[#F5F5F0] group-hover:text-[#8A8FF8] transition-colors mb-1 flex items-center gap-2">
+                      {item.title}
+                      {item.url && (
+                        <svg className="w-3.5 h-3.5 text-[#7A7A72] group-hover:text-[#8A8FF8] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                        </svg>
+                      )}
+                    </h3>
+                    <p className="text-[13px] text-[#B0B0A8] mb-3">
                       {item.description}
                     </p>
                     <div className="flex flex-wrap gap-1.5">
                       {item.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="text-[10px] px-2.5 py-0.5 rounded-full border border-[#444] text-[#B0B0A8]"
+                          className="text-[10px] px-2.5 py-0.5 rounded-full border border-white/20 text-[#B0B0A8] backdrop-blur-sm"
                         >
                           {tag}
                         </span>
