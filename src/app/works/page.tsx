@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { getServices, getPortfolio, getCompany, getGmailUrl } from "@/data/site";
+import { getServices, getPortfolio, getCompany } from "@/data/site";
+import EmailLink from "@/components/EmailLink";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -19,7 +20,6 @@ export default function WorksPage() {
   const services = getServices();
   const portfolio = getPortfolio();
   const company = getCompany();
-  const gmailUrl = getGmailUrl();
 
   return (
     <>
@@ -182,12 +182,9 @@ export default function WorksPage() {
                   <span className="text-[11px] tracking-[0.15em] uppercase text-[#7A7A72] mb-2 block">
                     Email
                   </span>
-                  <a
-                    href={gmailUrl}
-                    className="text-lg text-[#1A1A1A] hover:text-[#5E6AD2] transition-colors"
-                  >
+                  <EmailLink className="text-lg text-[#1A1A1A] hover:text-[#5E6AD2] transition-colors">
                     {company.email}
-                  </a>
+                  </EmailLink>
                 </div>
                 <div>
                   <span className="text-[11px] tracking-[0.15em] uppercase text-[#7A7A72] mb-2 block">
@@ -197,8 +194,7 @@ export default function WorksPage() {
                 </div>
               </div>
 
-              <a
-                href={gmailUrl}
+              <EmailLink
                 className="inline-flex items-center gap-3 w-fit px-8 py-3.5 rounded-full bg-[#1A1A1A] text-[#F5F5F0] text-[13px] hover:bg-[#2D2D2D] transition-colors"
               >
                 이메일 보내기
@@ -215,7 +211,7 @@ export default function WorksPage() {
                     d="M17 8l4 4m0 0l-4 4m4-4H3"
                   />
                 </svg>
-              </a>
+              </EmailLink>
             </div>
           </div>
         </div>

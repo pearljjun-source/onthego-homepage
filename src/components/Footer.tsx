@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { getCompany, getNav, getGmailUrl } from "@/data/site";
+import { getCompany, getNav } from "@/data/site";
+import EmailLink from "@/components/EmailLink";
 
 export default function Footer() {
   const company = getCompany();
   const nav = getNav();
-  const gmailUrl = getGmailUrl();
   const year = new Date().getFullYear();
 
   return (
@@ -44,12 +44,9 @@ export default function Footer() {
               <li>{company.address}</li>
               <li>사업자등록번호 {company.businessNumber}</li>
               <li>
-                <a
-                  href={gmailUrl}
-                  className="hover:text-white transition-colors"
-                >
+                <EmailLink className="hover:text-white transition-colors">
                   {company.email}
-                </a>
+                </EmailLink>
               </li>
             </ul>
           </div>

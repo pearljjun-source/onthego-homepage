@@ -4,13 +4,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { getNav, getGmailUrl } from "@/data/site";
+import { getNav } from "@/data/site";
+import EmailLink from "@/components/EmailLink";
 import { images } from "@/data/theme";
 
 export default function Header() {
   const pathname = usePathname();
   const nav = getNav();
-  const gmailUrl = getGmailUrl();
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -41,12 +41,9 @@ export default function Header() {
               {item.label}
             </Link>
           ))}
-          <a
-            href={gmailUrl}
-            className="text-[13px] px-5 py-2 rounded-full bg-[#1A1A1A] text-[#F5F5F0] hover:bg-[#2D2D2D] active:bg-[#3D3D3D] transition-colors duration-200 min-h-[44px] flex items-center"
-          >
+          <EmailLink className="text-[13px] px-5 py-2 rounded-full bg-[#1A1A1A] text-[#F5F5F0] hover:bg-[#2D2D2D] active:bg-[#3D3D3D] transition-colors duration-200 min-h-[44px] flex items-center">
             문의하기
-          </a>
+          </EmailLink>
         </nav>
 
         {/* Mobile */}
@@ -79,13 +76,9 @@ export default function Header() {
               {item.label}
             </Link>
           ))}
-          <a
-            href={gmailUrl}
-            onClick={() => setMenuOpen(false)}
-            className="block text-sm text-[#5E6AD2] min-h-[44px] flex items-center active:opacity-70 transition-opacity"
-          >
+          <EmailLink className="block text-sm text-[#5E6AD2] min-h-[44px] flex items-center active:opacity-70 transition-opacity">
             문의하기
-          </a>
+          </EmailLink>
         </div>
       )}
     </header>

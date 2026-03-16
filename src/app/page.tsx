@@ -1,15 +1,15 @@
 import Link from "next/link";
-import { getSlogan, getServices, getPortfolio, getCompany, getGmailUrl } from "@/data/site";
+import { getSlogan, getServices, getPortfolio, getCompany } from "@/data/site";
 import { images } from "@/data/theme";
 import RotatingSlogan from "@/components/RotatingSlogan";
 import ParticleWaveLoader from "@/components/ParticleWaveLoader";
+import EmailLink from "@/components/EmailLink";
 
 export default function Home() {
   const slogan = getSlogan();
   const services = getServices();
   const portfolio = getPortfolio();
   const company = getCompany();
-  const gmailUrl = getGmailUrl();
 
   return (
     <>
@@ -144,12 +144,9 @@ export default function Home() {
           <p className="text-[15px] text-[#7A7A72] mb-10">
             아이디어만 가져오세요. 나머지는 저희가 함께합니다.
           </p>
-          <a
-            href={gmailUrl}
-            className="inline-block px-8 py-3.5 rounded-full bg-[#1A1A1A] text-[#F5F5F0] text-[13px] hover:bg-[#2D2D2D] active:bg-[#3D3D3D] transition-colors min-h-[44px]"
-          >
+          <EmailLink className="inline-block px-8 py-3.5 rounded-full bg-[#1A1A1A] text-[#F5F5F0] text-[13px] hover:bg-[#2D2D2D] active:bg-[#3D3D3D] transition-colors min-h-[44px]">
             문의하기
-          </a>
+          </EmailLink>
         </div>
       </section>
     </>
