@@ -105,7 +105,7 @@ const siteData: SiteData = {
       id: "chanonlja",
       title: "홈페이지 제작",
       titleEn: "Website Development",
-      description: "렌터카 프랜차이즈 기업 웹사이트 기획·디자인·개발",
+      description: "기업 웹사이트 기획·디자인·개발",
       descriptionEn: "Car rental franchise corporate website",
       tags: ["Web", "Franchise", "Responsive"],
       status: "completed",
