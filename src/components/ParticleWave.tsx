@@ -83,7 +83,7 @@ function Wave() {
   });
 
   return (
-    <points ref={meshRef} geometry={geometry} rotation={[-Math.PI / 3.5, 0, 0]} position={[0, -2, 0]}>
+    <points ref={meshRef} geometry={geometry} rotation={[Math.PI / 3.5, 0, 0]} position={[0, 4, 0]}>
       <pointsMaterial
         size={1.8}
         color="#000000"
@@ -100,7 +100,7 @@ export default function ParticleWave() {
   return (
     <div className="absolute inset-0 z-0 pointer-events-auto">
       <Canvas
-        camera={{ position: [0, 8, 18], fov: 50 }}
+        camera={{ position: [0, -6, 18], fov: 50 }}
         dpr={[1, 1.5]}
         gl={{ antialias: false, alpha: true }}
         style={{ background: "transparent" }}
