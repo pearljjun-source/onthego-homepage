@@ -36,6 +36,7 @@ export interface PortfolioItem {
   id: string;
   title: string;
   titleEn: string;
+  serviceLabel: string;
   description: string;
   descriptionEn: string;
   tags: string[];

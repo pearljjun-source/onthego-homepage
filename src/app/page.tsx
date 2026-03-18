@@ -111,7 +111,7 @@ export default function Home() {
                     0{i + 1}
                   </span>
                   <h3 className="md:col-span-3 text-[clamp(1.1rem,2vw,1.4rem)] font-normal text-[#F5F5F0] group-hover:text-[#8A8FF8] transition-colors">
-                    {item.title}
+                    {item.serviceLabel}
                   </h3>
                   <span className="md:col-span-4 text-[13px] text-[#7A7A72]">
                     {item.description}
