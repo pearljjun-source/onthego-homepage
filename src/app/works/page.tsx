@@ -98,6 +98,10 @@ export default function WorksPage() {
                 ? { href: item.url, target: "_blank" as const, rel: "noopener noreferrer" }
                 : {};
               const isEven = i % 2 === 0;
+              const isMobile = item.mockup === "phone";
+              const imgColSpan = isMobile ? "md:col-span-4" : "md:col-span-7";
+              const txtColSpan = isMobile ? "md:col-span-8" : "md:col-span-5";
+              const imgAspect = isMobile ? "aspect-[9/16]" : "aspect-[16/10]";
 
               return (
                 <Wrapper
@@ -108,22 +112,20 @@ export default function WorksPage() {
                   }`}
                 >
                   {/* 이미지 — 독립 호버 줌 */}
-                  <div className={`${isEven ? "md:col-span-7" : "md:col-span-7 md:order-2"} group/img relative aspect-[16/10] rounded-2xl overflow-hidden`}>
+                  <div className={`${isEven ? imgColSpan : `${imgColSpan} md:order-2`} group/img relative ${imgAspect} rounded-2xl overflow-hidden ${isMobile ? "max-w-[280px] mx-auto md:mx-0" : ""}`}>
                     {item.image && (
                       <Image
                         src={item.image}
                         alt={item.title}
                         fill
-                        sizes="(max-width: 768px) 100vw, 58vw"
-                        className={`object-cover group-hover/img:scale-105 transition-transform duration-700 ease-out ${
-                          item.id === "speaky-app" ? "object-[center_17%]" : "object-top"
-                        }`}
+                        sizes={isMobile ? "(max-width: 768px) 280px, 33vw" : "(max-width: 768px) 100vw, 58vw"}
+                        className="object-cover object-top group-hover/img:scale-105 transition-transform duration-700 ease-out"
                       />
                     )}
                   </div>
 
                   {/* 설명 — 독립 호버 색상 */}
-                  <div className={`${isEven ? "md:col-span-5" : "md:col-span-5 md:order-1"} group/text flex flex-col gap-4`}>
+                  <div className={`${isEven ? txtColSpan : `${txtColSpan} md:order-1`} group/text flex flex-col gap-4`}>
                     <span className="text-[13px] font-medium text-[#F5F5F0]/50">
                       {item.serviceLabel}
                     </span>
