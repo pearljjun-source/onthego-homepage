@@ -124,7 +124,10 @@ export default function WorksPage() {
 
                   {/* 설명 — 독립 호버 색상 */}
                   <div className={`${isEven ? "md:col-span-5" : "md:col-span-5 md:order-1"} group/text flex flex-col gap-4`}>
-                    <span className="text-[10px] tracking-[0.15em] uppercase text-[#8A8FF8]">
+                    <span className="text-[13px] font-medium text-[#F5F5F0]/50">
+                      {item.serviceLabel}
+                    </span>
+                    <span className="text-[10px] tracking-[0.15em] uppercase text-[#8A8FF8] -mt-2">
                       {statusLabel[item.status]}
                     </span>
                     <h3 className="text-2xl md:text-3xl font-light text-[#F5F5F0] group-hover/text:text-[#8A8FF8] transition-colors duration-700 flex items-center gap-2">
